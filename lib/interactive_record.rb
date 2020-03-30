@@ -59,6 +59,6 @@ class InteractiveRecord
       attribute.each do |k,v|
         student = DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE ? = ?", k.to_s, v)
       end
-      student 
+      student
     end
 end
