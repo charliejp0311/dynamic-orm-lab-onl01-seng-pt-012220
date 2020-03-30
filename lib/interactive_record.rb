@@ -41,8 +41,8 @@ class InteractiveRecord
     end
 
     def save
-      sql = <<-SQL 
-        INSERT INTO #{self.class.table_name} (#{self.col_names_for_insert}) 
+      sql = <<-SQL
+        INSERT INTO #{self.class.table_name} (#{self.col_names_for_insert})
         VALUES (#{self.values_for_insert})
       SQL
       binding.pry
