@@ -63,7 +63,7 @@ class InteractiveRecord
         key = k.to_s
         val = v
       end
-      what_to_find = DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE #{k.to_s} = #{v};")
+      what_to_find = DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE #{key.to_s} = #{val};")
       # what_to_find
       binding.pry
       # sql = <<-SQL
