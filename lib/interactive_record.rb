@@ -55,11 +55,12 @@ class InteractiveRecord
     end
 
     def self.find_by(attribute)
-      s = nil
+      key = nil
+      val = nil
       attribute.each do |k,v|
-        s = DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE ? = ?", k.to_s, v)
-        binding.pry
+          key = k.to_s
+          val = v
       end
-      s
+      binding.pry
     end
 end
