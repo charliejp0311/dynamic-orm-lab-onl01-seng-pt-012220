@@ -59,6 +59,6 @@ class InteractiveRecord
       attribute.each do |k,v|
         what_to_find = DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE #{k.to_s} = '#{v}';")
       end
-      what_to_find 
+      what_to_find
     end
 end
