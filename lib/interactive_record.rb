@@ -42,6 +42,8 @@ class InteractiveRecord
 
     def save
       sql = "INSERT INTO #{self.class.table_name} ('#{self.class.col_names_for_insert}') VALUES ('#{self.class.values_for_insert}')"
+      DB[:conn].execute(sql)
+      self.id = DB[:conn].execute("SELECT last_insert_rowid() FROM #{self.class.table_name}")[0][0]
     end
 
     def self.find_by_name(name)
