@@ -29,8 +29,9 @@ class InteractiveRecord
     end
 
     def col_names_for_insert
-      binding.pry
-      self.class.column_names.delete("id")
+      col_names_w_o_id = []
+      col_names_w_o_id = self.class.column_names.delete("id")
+      col_names_w_o_id
     end
     def self.find_by_name(name)
       sql = "SELECT * FROM #{self.table_name} WHERE name = ?"
