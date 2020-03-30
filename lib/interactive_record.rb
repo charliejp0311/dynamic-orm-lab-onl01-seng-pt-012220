@@ -25,7 +25,7 @@ class InteractiveRecord
     def initialize(attributes = {})
       # binding.pry
       attributes.each do |prop, val|
-        self.send("#{prop}=", value)
+        self.send("#{prop}=", val)
       end
     end
 
