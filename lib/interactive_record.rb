@@ -55,8 +55,8 @@ class InteractiveRecord
     end
 
     def self.find_by(attribute)
-      binding.pry
       attribute.each do |k,v|
+        binding.pry
         DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE ? = ?", k, v)
       end
     end
