@@ -22,7 +22,7 @@ class InteractiveRecord
       attr_accessor col_name.to_sym
     end
 
-    def initialzie(attributes = {})
+    def initialize(attributes = {})
       # binding.pry
       attributes.each do |prop, val|
         self.send("#{prop}=", value)
