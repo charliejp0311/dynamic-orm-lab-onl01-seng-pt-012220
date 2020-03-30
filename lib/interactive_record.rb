@@ -58,7 +58,7 @@ class InteractiveRecord
       key = nil
       val = nil
       # binding.pry
-      tab = self.table_name
+      # tab = 
       attribute.each do |k,v|
           key = k.to_s
           val = v
@@ -66,10 +66,10 @@ class InteractiveRecord
       # binding.pry
       sql = <<-SQL
         SELECT *
-        FROM ?
-        WHERE ? = ?;
+        FROM #{self.table_name}
+        WHERE #{key} = #{val};
       SQL
       binding.pry
-      DB[:conn].execute(sql, tab, key, val)
+      DB[:conn].execute(sql)#, tab, key, val)
     end
 end
