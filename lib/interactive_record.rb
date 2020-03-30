@@ -41,6 +41,7 @@ class InteractiveRecord
     end
 
     def save
+      binding.pry
       sql = "INSERT INTO #{self.class.table_name} ('#{self.col_names_for_insert}') VALUES ('#{self.values_for_insert}')"
       DB[:conn].execute(sql)
       self.id = DB[:conn].execute("SELECT last_insert_rowid() FROM #{self.class.table_name}")[0][0]
