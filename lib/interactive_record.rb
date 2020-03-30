@@ -62,7 +62,7 @@ class InteractiveRecord
           # val = v
       end
       what_to_find
-      # binding.pry
+      binding.pry
       # sql = <<-SQL
       #   SELECT *
       #   FROM #{self.table_name}
