@@ -57,7 +57,7 @@ class InteractiveRecord
     def self.find_by(attribute)
       key = nil
       val = nil
-      binding.pry
+      # binding.pry
       tab = self.table_name
       attribute.each do |k,v|
           key = k.to_s
