@@ -17,8 +17,6 @@ class InteractiveRecord
       column_names.compact
     end
 
-
-
     def initialize(attributes = {})
       # binding.pry
       attributes.each do |prop, val|
