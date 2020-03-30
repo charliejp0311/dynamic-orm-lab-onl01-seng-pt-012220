@@ -69,7 +69,7 @@ class InteractiveRecord
         FROM ?
         WHERE ? = ?;
       SQL
-
+      binding.pry
       DB[:conn].execute(sql, tab, key, val)
     end
 end
