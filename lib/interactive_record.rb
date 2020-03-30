@@ -29,6 +29,7 @@ class InteractiveRecord
     end
 
     def col_names_for_insert
+      binding.pry
       self.class.column_names
     end
     def self.find_by_name(name)
