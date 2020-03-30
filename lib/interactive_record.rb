@@ -58,6 +58,7 @@ class InteractiveRecord
       s = nil
       attribute.each do |k,v|
         s = DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE ? = ?", k.to_s, v)
+        binding.pry
       end
       s
     end
