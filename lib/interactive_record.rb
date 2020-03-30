@@ -61,7 +61,7 @@ class InteractiveRecord
           key = k.to_s
           val = v
       end
-      binding.pry
+      # binding.pry
       sql = <<-SQL
         SELECT *
         FROM #{self.table_name_for_insert}
