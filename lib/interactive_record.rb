@@ -56,17 +56,18 @@ class InteractiveRecord
 
     def self.find_by(attribute)
       what_to_find = nil
-      key = nil
-      val = nil
+      # key = nil
+      # val = nil
       # binding.pry
       attribute.each do |k,v|
-        key = k.to_s
-        val = v
+        what_to_find = DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE #{k.to_s} = '#{v}';")
+        # key = k.to_s
+        # val = v
       end
-      binding.pry
-      what_to_find = DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE #{key.to_s} = '#{val}';")
+      # binding.pry
+      what_to_find #= DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE #{key.to_s} = '#{val}';")
       # what_to_find
-      binding.pry
+      # binding.pry
       # sql = <<-SQL
       #   SELECT *
       #   FROM #{self.table_name}
