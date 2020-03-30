@@ -66,10 +66,10 @@ class InteractiveRecord
       # binding.pry
       sql = <<-SQL
         SELECT *
-        FROM #{tab}
+        FROM ?
         WHERE ? = ?;
       SQL
 
-      DB[:conn].execute(sql, key, val)
+      DB[:conn].execute(sql, tab, key, val)
     end
 end
