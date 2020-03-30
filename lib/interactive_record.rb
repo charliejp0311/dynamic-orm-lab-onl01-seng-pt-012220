@@ -58,7 +58,7 @@ class InteractiveRecord
       key = nil
       val = nil
       # binding.pry
-      # tab = 
+      # tab =
       attribute.each do |k,v|
           key = k.to_s
           val = v
