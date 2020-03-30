@@ -33,6 +33,7 @@ class InteractiveRecord
       c_names = self.class.column_names
       c_names.delete("id")
       c_names
+      binding.pry
     end
     def self.find_by_name(name)
       sql = "SELECT * FROM #{self.table_name} WHERE name = ?"
