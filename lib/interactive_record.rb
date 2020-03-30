@@ -57,6 +57,7 @@ class InteractiveRecord
     def self.find_by(attribute)
       key = nil
       val = nil
+      tab = self.table_name_for_insert
       attribute.each do |k,v|
           key = k.to_s
           val = v
@@ -64,7 +65,7 @@ class InteractiveRecord
       # binding.pry
       sql = <<-SQL
         SELECT *
-        FROM #{self.table_name_for_insert}
+        FROM #{tab}
         WHERE ? = ?;
       SQL
 
