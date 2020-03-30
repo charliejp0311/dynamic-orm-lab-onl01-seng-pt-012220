@@ -40,6 +40,10 @@ class InteractiveRecord
       values.join(", ")
     end
 
+    def save 
+      sql = "INSERT INTO #{self.class.table_name} ('#{self.class.col_names_for_insert}') VALUES ('#{self.class.values_for_insert}')"
+    end
+
     def self.find_by_name(name)
       sql = "SELECT * FROM #{self.table_name} WHERE name = ?"
       DB[:conn].execute(sql, name)
