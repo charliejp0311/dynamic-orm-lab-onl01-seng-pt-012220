@@ -67,7 +67,7 @@ class InteractiveRecord
         FROM #{self.table_name_for_insert}
         WHERE #{key} = #{val};
       SQL
-      
+
       DB[:conn].execute(sql)
     end
 end
