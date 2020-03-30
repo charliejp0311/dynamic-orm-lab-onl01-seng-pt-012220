@@ -33,7 +33,7 @@ class InteractiveRecord
     end
 
     def values_for_insert
-      
+
     end
     def self.find_by_name(name)
       sql = "SELECT * FROM #{self.table_name} WHERE name = ?"
